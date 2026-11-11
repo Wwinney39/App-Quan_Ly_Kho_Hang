@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:fitsSystemWindows="true">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#00796B"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="←  Chi tiết sản phẩm"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Khối thông tin chi tiết -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView android:id="@+id/tvDName" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="24sp" android:textStyle="bold" android:textColor="#333"/>
+
+                    <TextView android:id="@+id/tvDCat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#E0F2F1" android:textColor="#00796B" android:paddingHorizontal="12dp" android:paddingVertical="4dp" android:layout_marginTop="8dp" android:layout_marginBottom="16dp" android:textSize="12sp" android:textStyle="bold"/>
+
+                    <TextView android:id="@+id/tvDPrice" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="28sp" android:textStyle="bold" android:textColor="#D32F2F" android:layout_marginBottom="16dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" android:layout_marginBottom="16dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Số lượng tồn kho" android:textColor="#777" android:textSize="12sp" android:textStyle="bold"/>
+                            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
+                                <TextView android:id="@+id/tvDQty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="22sp" android:textStyle="bold" android:textColor="#333"/>
+                                <TextView android:id="@+id/tvDWarn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sắp hết hàng" android:background="#FFEBEE" android:textColor="#D32F2F" android:paddingHorizontal="8dp" android:paddingVertical="2dp" android:layout_marginStart="8dp" android:layout_gravity="center_vertical" android:textSize="10sp" android:textStyle="bold" android:visibility="gone"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Giá trị tồn kho" android:textColor="#777" android:textSize="12sp" android:textStyle="bold"/>
+                            <TextView android:id="@+id/tvDVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textColor="#333" android:layout_marginTop="4dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mô tả" android:textColor="#777" android:textSize="12sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvDDesc" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#333" android:layout_marginTop="4dp" android:textSize="14sp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <Button android:id="@+id/btnAdd1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:text="+ Nhập thêm 1" android:textAllCaps="false" android:textSize="16sp" android:backgroundTint="#00796B" android:layout_marginEnd="6dp"/>
+                <Button android:id="@+id/btnSell1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:text="- Bán 1" android:textAllCaps="false" android:textSize="16sp" android:backgroundTint="#EF6C00" android:layout_marginStart="6dp"/>
+            </LinearLayout>
+
+            <Button android:id="@+id/btnBack" android:layout_width="match_parent" android:layout_height="50dp" android:text="Quay lại" android:textAllCaps="false" android:textSize="16sp" android:textColor="#00796B" android:backgroundTint="#FFFFFF" app:strokeColor="#00796B" app:strokeWidth="1dp" android:layout_marginBottom="12dp"/>
+
+            <Button android:id="@+id/btnDel" android:layout_width="match_parent" android:layout_height="50dp" android:text="Xóa sản phẩm" android:textAllCaps="false" android:textSize="16sp" android:backgroundTint="#D32F2F"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
